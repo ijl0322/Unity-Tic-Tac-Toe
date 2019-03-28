@@ -31,7 +31,14 @@ public class GameController : MonoBehaviour
     {
         if (buttonList[0].text == playerSide && buttonList[1].text == playerSide && buttonList[2].text == playerSide) {
             GameOver();
+        } else if (buttonList[3].text == playerSide && buttonList[4].text == playerSide && buttonList[5].text == playerSide)
+        {
+            GameOver();
+        } else if (buttonList[6].text == playerSide && buttonList[7].text == playerSide && buttonList[8].text == playerSide)
+        {
+            GameOver();
         }
+        ChangeSides();
     }
 
     void GameOver()
@@ -40,5 +47,10 @@ public class GameController : MonoBehaviour
         {
             buttonList[i].GetComponentInParent<Button>().interactable = false;
         }
+    }
+
+    void ChangeSides()
+    {
+        playerSide = (playerSide == "X") ? "O" : "X";
     }
 }
